@@ -3,29 +3,16 @@ pipeline {
 
   environment {
     PROJECT = 'juice-shop'
-    VERSION = '1.0'
+    VERSION = '16.0.1'
     BRANCH = 'main'
     BLACKDUCK_ACCESS_TOKEN = credentials('blackduck-token')
     SRM_TOKEN = credentials('srm-token')
-    GITHUB_TOKEN = credentials('github-token')
   }
 
   stages{
     stage('NPM Install') {
       steps {
         sh 'npm install'
-      }
-    }
-
-    stage('Set Up Environment') {
-      steps {
-        sh '''
-          curl -s -L https://raw.githubusercontent.com/jones6951/io-scripts/main/getProjectID.sh > /tmp/getProjectID.sh
-          curl -s -L https://raw.githubusercontent.com/jones6951/io-scripts/main/isNumeric.sh > /tmp/isNumeric.sh
-
-          chmod +x /tmp/getProjectID.sh
-          chmod +x /tmp/isNumeric.sh
-        '''
       }
     }
 
@@ -55,7 +42,7 @@ pipeline {
       agent { label 'ubuntu' }
       steps {
         sh '''
-          projectID=$(/tmp/getProjectID.sh --url=${CODEDX_SERVER_URL} --apikey=${CODEDX_TOKEN} --project=${PROJECT})
+          echo "Running SRM"
         '''
       }
     }
