@@ -15,6 +15,8 @@ jobs:
   blackduck:
     runs-on: ubuntu-latest
     name: scan with black duck
+    needs:
+      build
     env:
       BRIDGE_BLACKDUCK_URL: ${{ vars.BLACKDUCK_URL }}
       BRIDGE_BLACKDUCK_TOKEN: ${{ secrets.BLACKDUCK_API_TOKEN }}
