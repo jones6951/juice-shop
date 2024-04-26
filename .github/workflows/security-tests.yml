@@ -1,0 +1,19 @@
+name: polaris upload and scan
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: NodeGoat
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - name: Run Black Duck Scan
+        shell: bash
+        env:
+          POLARIS_API_URL: ${{ env.BLACKDUCK_URL }}
+        run: |
+          echo "BD"
