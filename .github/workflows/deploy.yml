@@ -25,7 +25,3 @@ jobs:
 
       - name: Terraform Apply 
         run: terraform apply -var="key_name=juice-shop-key" -auto-approve
-
-      - name: Show Juice Shop URL
-        run: |
-          echo "http://$(terraform output -raw instance_public_dns)"
