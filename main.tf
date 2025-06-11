@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "bdlab-juice-shop-tfstate"   # <-- your bucket name here
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
