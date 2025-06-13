@@ -1,6 +1,9 @@
 name: Run FDAST Script
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
@@ -24,11 +27,11 @@ jobs:
 
     - name: Run FDAST script
       env:
-        BASE_URL: ${{ vars.BASE_URL }}
+        BASE_URL: ${{ vars.POLARIS_API }}
         APPLICATION_NAME: ${{ vars.APPLICATION_NAME }}
         PROJECT_NAME: ${{ vars.PROJECT_NAME }}
         NOTES: ${{ vars.NOTES }}
-        API_TOKEN: ${{ secrets.API_TOKEN }} # Use GitHub Secrets for sensitive data
+        API_TOKEN: ${{ secrets.POLARIS_API_TOKEN }} # Use GitHub Secrets for sensitive data
       run: |
         source polaris-env/bin/activate
         python fdast.py
