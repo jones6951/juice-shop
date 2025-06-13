@@ -1,4 +1,4 @@
-name: Run FDAST Scan
+name: Run Polaris FDAST Scan
 
 on:
   push:
