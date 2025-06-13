@@ -66,7 +66,6 @@ resource "aws_instance" "juice_instance" {
   vpc_security_group_ids = [aws_security_group.juice_sg.id]
   associate_public_ip_address = true
   key_name               = var.key_name
-  availability_zone      = "us-east-1a"  # Specify a supported Availability Zone
 
   user_data = <<-EOF
               #!/bin/bash
