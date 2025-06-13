@@ -1,4 +1,4 @@
-name: Run FDAST Script
+name: Run FDAST Scan
 
 on:
   push:
