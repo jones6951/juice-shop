@@ -73,7 +73,7 @@ resource "aws_instance" "juice_instance" {
               amazon-linux-extras install docker -y
               service docker start
               usermod -a -G docker ec2-user
-              docker run -d -p 80:3000 bkimminich/juice-shop
+              docker run -d -p 80:3000 bkimminich/juice-shop:v9.3.1
               EOF
 
   tags = {
