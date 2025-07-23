@@ -3,7 +3,7 @@ import requests
 
 # === CONFIGURATION ===
 API_TOKEN = os.getenv('API_TOKEN')  # Read API token from environment variable
-BASE_URL = os.getenv('BASE_URL', 'https://poc.polaris.synopsys.com/api')  # Default value if not set
+BASE_URL = os.getenv('BASE_URL', 'https://poc.polaris.blackduck.com/api')  # Default value if not set
 APPLICATION_NAME = os.getenv('APPLICATION_NAME', 'Default-App-Name')  # Default value if not set
 PROJECT_NAME = os.getenv('PROJECT_NAME', 'Default-Project-Name')  # Default value if not set
 NOTES = os.getenv('NOTES', 'Default Notes')  # Default value if not set
