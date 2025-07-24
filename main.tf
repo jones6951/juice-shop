@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "bdlab-juice-shop-tfstate"   # <-- your bucket name here
+    bucket = "bdlab-mj-juice-shop-tfstate"   # <-- your bucket name here
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
