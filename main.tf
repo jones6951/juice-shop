@@ -62,7 +62,7 @@ resource "aws_security_group" "juice_sg" {
 
 resource "aws_instance" "juice_instance" {
   ami                    = "ami-0c2b8ca1dad447f8a" # Amazon Linux 2 AMI (HVM), SSD Volume Type
-  instance_type          = "m4.xlarge"  # Upgraded instance type
+  instance_type          = "t2.micro"  # Changed instance type. Was m4.xlarge
   subnet_id              = aws_subnet.juice_subnet.id
   vpc_security_group_ids = [aws_security_group.juice_sg.id]
   associate_public_ip_address = true
