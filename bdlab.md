@@ -58,14 +58,14 @@ In your GitHub repo, go to **Settings → Secrets and variables → Actions** an
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
 
----
 ### 4. Create a key-pair to allow SSH access
 
 - Go to AWS EC2 → Network & Security → Key Pairs →Create key pair
 - Name it juice-shop-key
 - Leave the key type as RSA
 - Click Create Key Pair
-  
+
+---  
 ## Configure Terraform Backend
 
 In `main.tf`, ensure you have:
