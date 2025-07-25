@@ -2,7 +2,7 @@
   "id": "c1b46d51-6433-4342-aef5-e0eae1711b01",
   "version": "2.0",
   "name": "Juice",
-  "url": "http://44.211.182.78",
+  "url": "http://13.223.84.36",
   "tests": [{
     "id": "588a505f-6342-4d7a-b123-27c53183989d",
     "name": "Juice",
@@ -10,7 +10,7 @@
       "id": "d32e70c6-6d4b-4eba-bfc9-31f6d873d7ec",
       "comment": "",
       "command": "open",
-      "target": "http://44.211.182.78/#/login",
+      "target": "http://13.223.84.36/#/login",
       "targets": [],
       "value": ""
     }, {
@@ -106,6 +106,6 @@
     "timeout": 300,
     "tests": ["588a505f-6342-4d7a-b123-27c53183989d"]
   }],
-  "urls": ["http://44.211.182.78/"],
+  "urls": ["http://13.223.84.36/"],
   "plugins": []
 }
