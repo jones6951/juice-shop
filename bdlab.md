@@ -29,6 +29,7 @@ Create an S3 bucket (replace with your unique name):
 aws s3api create-bucket --bucket your-unique-juice-shop-tfstate --region us-east-1
 aws s3api put-bucket-versioning --bucket your-unique-juice-shop-tfstate --versioning-configuration Status=Enabled
 ```
+Note: The S3 bucket must have a unique name for the AWS region. As such, add some info to make it unique, and update main.tf accordingly
 
 ### 2. (Optional) Create a DynamoDB Table for State Locking
 
@@ -58,7 +59,13 @@ In your GitHub repo, go to **Settings → Secrets and variables → Actions** an
 - `AWS_SECRET_ACCESS_KEY`
 
 ---
+### 4. Create a key-pair to allow SSH access
 
+- Go to AWS EC2 → Network & Security → Key Pairs →Create key pair
+- Name it juice-shop-key
+- Leave the key type as RSA
+- Click Create Key Pair
+  
 ## Configure Terraform Backend
 
 In `main.tf`, ensure you have:
